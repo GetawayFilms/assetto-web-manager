@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assetto Server Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Assetto Server Manager</h2>
+            </div>
+            
+            <div class="server-list">
+                {% for server_id, server in servers.items() %}
+                <div class="server-item" data-server-id="{{ server_id }}">
+                    <div class="server-status">
+                        <span class="status-dot status-running"></span>
+                    </div>
+                    <div class="server-info">
+                        <div class="server-name">{{ server.display_name }}</div>
+                        <div class="server-meta">
+                            <span class="player-count">3 players</span>
+                            <span class="server-desc">{{ server.description }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="content-header">
+                <h1 id="selected-server-name">Select a server</h1>
+                <div class="server-controls">
+                    <button id="start-btn" class="btn btn-start" style="display: none;">Start Server</button>
+                    <button id="stop-btn" class="btn btn-stop" style="display: none;">Stop Server</button>
+                </div>
+            </div>
+
+            <div class="content-body">
+                <div id="welcome-message" class="welcome-panel">
+                    <h2>Welcome to Assetto Server Manager</h2>
+                    <p>Select a server from the sidebar to view its details, console output, and manage its status.</p>
+                </div>
+
+                <div id="server-details" class="server-panel" style="display: none;">
+                    <div class="panel-section">
+                        <h3>Console Output</h3>
+                        <div class="console-output" id="console-output">
+                            <div class="console-line">[12:34:56] AssettoServer started successfully</div>
+                            <div class="console-line">[12:35:02] Loading track: spa</div>
+                            <div class="console-line">[12:35:15] Player John connected</div>
+                        </div>
+                    </div>
+
+                    <div class="panel-section">
+                        <h3>Connected Players</h3>
+                        <div class="players-list" id="players-list">
+                            <div class="player-item">
+                                <span class="player-name">John</span>
+                                <span class="player-car">BMW M3 E30</span>
+                                <span class="player-time">2:15.432</span>
+                            </div>
+                            <div class="player-item">
+                                <span class="player-name">Mike</span>
+                                <span class="player-car">Ferrari 488 GT3</span>
+                                <span class="player-time">2:16.891</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
