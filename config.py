@@ -6,14 +6,14 @@ SERVER_CONFIG = {
         'port': 9600,
         'description': 'Open drift practice session'
     },
-    'race-server-02': {
+    'fruits-line': {
         'display_name': 'Fruits Line',
         'directory': '/home/ubuntu/assetto-server-drift-fruits',
         'executable': './AssettoServer',
         'port': 9602,
         'description': 'Tsukuba two way drift sessions'
     },
-    'qualifying-03': {
+    'shutoku-rush-hour': {
         'display_name': 'Shutoku Rush Hour',
         'directory': '/home/ubuntu/assetto-server-shutoku-full',
         'executable': './AssettoServer',

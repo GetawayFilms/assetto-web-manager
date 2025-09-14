@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assetto Server Manager</title>
+    <title>Godz Kitchen Servers</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -11,19 +11,19 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-header">
-                <h2>Assetto Server Manager</h2>
+                <h2>Godz Kitchen Servers</h2>
             </div>
             
             <div class="server-list">
                 {% for server_id, server in servers.items() %}
                 <div class="server-item" data-server-id="{{ server_id }}">
                     <div class="server-status">
-                        <span class="status-dot status-running"></span>
+                        <span class="status-dot status-stopped"></span>
                     </div>
                     <div class="server-info">
                         <div class="server-name">{{ server.display_name }}</div>
                         <div class="server-meta">
-                            <span class="player-count">3 players</span>
+                            <span class="player-count">0 players</span>
                             <span class="server-desc">{{ server.description }}</span>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
 
             <div class="content-body">
                 <div id="welcome-message" class="welcome-panel">
-                    <h2>Welcome to Assetto Server Manager</h2>
+                    <h2>Welcome to Godz Kitchen Server Manager</h2>
                     <p>Select a server from the sidebar to view its details, console output, and manage its status.</p>
                 </div>
 
@@ -78,6 +78,7 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
