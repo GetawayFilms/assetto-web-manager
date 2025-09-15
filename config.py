@@ -19,6 +19,13 @@ SERVER_CONFIG = {
         'executable': './AssettoServer',
         'port': 9604,
         'description': 'Highway traffic with day night cycle'
+    },
+    'fruits-line-clutch-gang': {
+        'display_name': 'Fruits Line CG',
+        'directory': '/home/ubuntu/assetto-server-fruits-cg',
+        'executable': './AssettoServer',
+        'port': 9606,
+        'description': 'Tsukuba Clutch Gang Sessions'
     }
 }
 
